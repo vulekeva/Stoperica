@@ -16,6 +16,8 @@ window.onload = function () {
     var buttonCapture = document.getElementById('button-capture');
     var buttonSplit = document.getElementById('button-split');
     var buttonReset = document.getElementById('button-reset');
+    var ulC = document.getElementById("Capture");
+    var ulS = document.getElementById("Split");
     var Interval ;
 
     buttonStart.onclick = function() {
@@ -44,6 +46,10 @@ window.onload = function () {
         promeniMinute.innerHTML=minuti;
         promeniSate.innerHTML=sati;
         buttonStart.innerText="Start";
+        ulC.innerHTML="";
+        ulS.innerHTML="";
+        splitNo=1;
+        captureNo=1;
     }
 
     buttonCapture.onclick = function(){
@@ -106,16 +112,14 @@ window.onload = function () {
     }
 
     function addCapture(number) {
-        var ul = document.getElementById("Capture");
         var li = document.createElement("li");
         li.appendChild(document.createTextNode("Capture "+number+": "+promeniSate.innerHTML+":"+promeniMinute.innerHTML
             +":"+promeniSekunde.innerHTML+":"+promeniDesetinke.innerText));
-        ul.appendChild(li);
+        ulC.appendChild(li);
         captureNo++;
     }
 
     function addSplit(number){
-        var ul = document.getElementById("Split");
         var li = document.createElement("li");
         var d=lSplitD;
         var s=lSplitS;
@@ -143,7 +147,7 @@ window.onload = function () {
 
         li.appendChild(document.createTextNode("Split "+number+": "+h+":"+m
             +":"+s+":"+d));
-        ul.appendChild(li);
+        ulS.appendChild(li);
         splitNo++;
     }
 
