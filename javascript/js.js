@@ -38,6 +38,7 @@ window.onload = function () {
         sekunde = "00";
         minuti = "00";
         sati ="00";
+        lSplitD=0;lSplitS=0;lSplitM=0;lSplitH=0;
         promeniDesetinke.innerHTML = desetinke;
         promeniSekunde.innerHTML = sekunde;
         promeniMinute.innerHTML=minuti;
